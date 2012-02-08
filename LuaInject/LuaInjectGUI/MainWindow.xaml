@@ -1,0 +1,10 @@
+﻿<Window x:Class="LuaInjectGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBox Name="target" Text="C:\Program Files (x86)\Lua\5.1\lua.exe" Margin="10" />
+        <TextBox Name="module" Text="lua5.1.dll" Margin="10" />
+        <Button Width="100" Content="Start" Click="Button_Click" Margin="10" />
+    </StackPanel>
+</Window>
