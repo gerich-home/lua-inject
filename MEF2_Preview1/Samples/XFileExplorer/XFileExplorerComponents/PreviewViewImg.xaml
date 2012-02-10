@@ -1,0 +1,8 @@
+﻿<c:PreviewControl x:Class="Microsoft.Samples.XFileExplorerComponents.PreviewViewImg"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:Microsoft.Samples.XFileExplorerComponents">
+    <Grid>
+        <Image Name="ImagePane" Margin="5,5,5,5" />
+    </Grid>
+</c:PreviewControl>

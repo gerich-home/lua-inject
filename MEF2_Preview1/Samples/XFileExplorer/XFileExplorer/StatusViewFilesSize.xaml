@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="Microsoft.Samples.XFileExplorer.StatusViewFilesSize"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="OnLoaded">
+    <Grid>
+        <Label Name="FilesSizeLabel" Height="28" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">(Total Files Size Service)</Label>
+    </Grid>
+</UserControl>

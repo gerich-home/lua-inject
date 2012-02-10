@@ -1,0 +1,135 @@
+﻿<Window x:Class="Microsoft.Samples.MefShapes.MainWindow" x:Name="mainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Microsoft.Samples.MefShapes"
+    xmlns:shapes="clr-namespace:Microsoft.Samples.MefShapes.Shapes;assembly=MefShapes.Shapes"
+   KeyDown="mainWindow_KeyDown"  
+    Title="MefShapes" Height="850" Width="860">
+    <Window.Resources>
+        <!-- TODO: investigate why ObjectDataProvider doesn't work-->
+        <!--<ObjectDataProvider MethodName="GetValue"  ObjectType="{x:Type primitives:IValueReference}" x:Key="getValue"/>-->
+        <local:ValueReferenceToShapeConverter x:Key="valueReferenceToShapeConverter"/>
+        <Style TargetType="MenuItem">
+            <Setter Property="FontFamily" Value="Corbel"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style x:Key="shapeItemsControl" TargetType="ItemsControl">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Canvas   IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type ContentPresenter}">
+                        <Setter Property="Canvas.Left" Value="{Binding Path=Left}"/>
+                        <Setter Property="Canvas.Top" Value="{Binding Path=Top}"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate  DataType='x:Type mefshapes:WpfCell'>
+                        <Rectangle  Width="{Binding Path=CellWidth}" Height="{Binding Path=CellHeight}" 
+                                   Canvas.Top="{Binding Path=Top}" Canvas.Left="{Binding Path=Left}" StrokeThickness="2">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0"/>
+                                    <GradientStop Color="{Binding Path=Color}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.Stroke>
+                                <LinearGradientBrush EndPoint="0.5,0.5" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0"/>
+                                    <GradientStop Color="{Binding Path=Color}" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Stroke>
+                        </Rectangle>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="mefshapesItemsControl" TargetType="ItemsControl">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Canvas  IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type ContentPresenter}">
+                        <Setter Property="Canvas.Left" Value="{Binding Path=Left}"/>
+                        <Setter Property="Canvas.Top" Value="{Binding Path=Top}"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate  DataType="x:Type shapes:IShape">
+                        <ItemsControl   Style="{StaticResource shapeItemsControl}" ItemsSource="{Binding Path=Cells}"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="mefshapesShapeSelectionItemsControl" TargetType="ItemsControl">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <UniformGrid IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Margin="3">
+                            <Canvas DataContext="{Binding Converter={StaticResource valueReferenceToShapeConverter}}" Width="{Binding Path=ShapeWidth}" Height="{Binding Path=ShapeHeight}">
+                                <ItemsControl Width="{Binding Path=ShapeWidth}" Height="{Binding Path=ShapeHeight}"   Style="{StaticResource shapeItemsControl}" ItemsSource="{Binding Path=Cells}">
+                                    <ItemsControl.RenderTransform>
+                                        <RotateTransform x:Name="spinningTransform"  CenterX="{Binding Path=ShapeCenterX}" CenterY="{Binding Path=ShapeCenterY}" Angle="0" />
+                                    </ItemsControl.RenderTransform>
+                                    <ItemsControl.Triggers>
+                                        <EventTrigger RoutedEvent="ItemsControl.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard RepeatBehavior="Forever">
+                                                    <DoubleAnimation Storyboard.TargetName="spinningTransform" Storyboard.TargetProperty="(RotateTransform.Angle)"  From="0.0" To="360" Duration="0:1:0" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </ItemsControl.Triggers>
+                                </ItemsControl>
+                            </Canvas>
+                            <TextBlock FontFamily="Corbel" Text="{Binding Path=Metadata.ShapeDescription}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CommandBindingClose_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Open"  Executed="CommandBindingOpenAssembly_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Help"  Executed="CommandBindingHelp_Executed"/>
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open Catalog"  Command="ApplicationCommands.Open"/>
+                <MenuItem Header="E_xit"  Command="ApplicationCommands.Close"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About"  Command="ApplicationCommands.Help"/>
+            </MenuItem>
+        </Menu>
+        <Canvas>
+            <ItemsControl x:Name="itemsControl" Canvas.Top="20" Canvas.Left="20"  Style="{StaticResource mefshapesItemsControl}"
+                          ItemsSource="{Binding ElementName=mainWindow, Path=MefShapesGame.Shapes}" />
+            <ItemsControl x:Name="selectionItemsControl" Canvas.Top="20" Canvas.Left="390"  Style="{StaticResource mefshapesShapeSelectionItemsControl}"
+                          ItemsSource="{Binding ElementName=mainWindow, Path=MefShapesGame.SelectionShapes}" />
+        </Canvas>
+    </DockPanel>
+</Window>

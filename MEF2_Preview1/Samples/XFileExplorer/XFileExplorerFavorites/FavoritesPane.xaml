@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Microsoft.Samples.XFileExplorerFavorites.FavoritesPane" x:Name="favPane"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:xFileExplorer="clr-namespace:Microsoft.Samples.XFileExplorer"
+    xmlns:xFileExplorer1="clr-namespace:Microsoft.Samples.XFileExplorerFavorites"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+  <Border Grid.Row="2" BorderThickness="1" BorderBrush="Gray">
+    <Border BorderThickness="1" Margin="2" BorderBrush="Gainsboro">
+      <ItemsControl x:Name="listBox" HorizontalAlignment="Left">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Button Click="FavoriteItemClicked">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition/>
+                  <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Path=Icon}" Height="16" Width="16"/>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Path=ItemName}"/>
+              </Grid>
+            </Button>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <WrapPanel IsItemsHost="True" />
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+      </ItemsControl>
+    </Border>
+  </Border>
+</UserControl>

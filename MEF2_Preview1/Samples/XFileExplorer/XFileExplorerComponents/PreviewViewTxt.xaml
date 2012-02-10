@@ -1,0 +1,8 @@
+﻿<c:PreviewControl x:Class="Microsoft.Samples.XFileExplorerComponents.PreviewViewTxt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:Microsoft.Samples.XFileExplorerComponents">
+    <Grid>
+        <TextBlock Name="TextPane" TextWrapping="Wrap" HorizontalAlignment="Center"  VerticalAlignment="Center">Txt viewer</TextBlock>
+    </Grid>
+</c:PreviewControl>

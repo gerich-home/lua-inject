@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{773A33A1-5CDF-48E4-9D7F-0DB3DBF3DBC3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <OutputPath>..\..\..\bin\Meflook</OutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Meflook</RootNamespace>
+    <AssemblyName>Meflook</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <CopyComponentModelComposition>true</CopyComponentModelComposition>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FolderView.xaml.cs">
+      <DependentUpon>FolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IShellViewMetaData.cs" />
+    <Compile Include="ISelectionService.cs" />
+    <Compile Include="LeftSpine.xaml.cs">
+      <DependentUpon>LeftSpine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageList.xaml.cs">
+      <DependentUpon>MessageList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessagePane.xaml.cs">
+      <DependentUpon>MessagePane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MeflookShell.xaml.cs">
+      <DependentUpon>MeflookShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionService.cs" />
+    <None Include="Images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="FolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LeftSpine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessagePane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MeflookShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Address.bmp" />
+    <Resource Include="Images\Archive.bmp" />
+    <Resource Include="Images\Calendar24.bmp" />
+    <Resource Include="Images\Contacts24.bmp" />
+    <Resource Include="Images\Copy.bmp" />
+    <Resource Include="Images\Cut.bmp" />
+    <Resource Include="Images\Delete.bmp" />
+    <Resource Include="Images\Drafts.bmp" />
+    <Resource Include="Images\Error.bmp" />
+    <Resource Include="Images\Find.bmp" />
+    <Resource Include="Images\Flag.bmp" />
+    <Resource Include="Images\Folder.bmp" />
+    <Resource Include="Images\Folder24.bmp" />
+    <Resource Include="Images\Forward.bmp" />
+    <Resource Include="Images\Help.bmp" />
+    <Resource Include="Images\Inbox.bmp" />
+    <Resource Include="Images\InternetFax.bmp" />
+    <Resource Include="Images\JournalEntry.bmp" />
+    <Resource Include="Images\Junk.bmp" />
+    <Resource Include="Images\Mail24.bmp" />
+    <Resource Include="Images\Move.bmp" />
+    <Resource Include="Images\New.bmp" />
+    <Resource Include="Images\New.png" />
+    <Resource Include="Images\NewAppointment.bmp" />
+    <Resource Include="Images\NewContact.bmp" />
+    <Resource Include="Images\NewDistributionList.bmp" />
+    <Resource Include="Images\NewFolder.bmp" />
+    <Resource Include="Images\NewMeetingRequest.bmp" />
+    <Resource Include="Images\NewSearchFolder.bmp" />
+    <Resource Include="Images\NewTask.bmp" />
+    <Resource Include="Images\Notes.bmp" />
+    <Resource Include="Images\Notes32.bmp" />
+    <Resource Include="Images\Outbox.bmp" />
+    <Resource Include="Images\Meflook.bmp" />
+    <Resource Include="Images\MeflookToday.bmp" />
+    <Resource Include="Images\Paste.bmp" />
+    <Resource Include="Images\Post.bmp" />
+    <Resource Include="Images\Post.png" />
+    <Resource Include="Images\Print.bmp" />
+    <Resource Include="Images\PrintPreview.bmp" />
+    <Resource Include="Images\Read.bmp" />
+    <Resource Include="Images\Read.gif" />
+    <Resource Include="Images\Recycle.bmp" />
+    <Resource Include="Images\Reply.bmp" />
+    <Resource Include="Images\ReplyAll.bmp" />
+    <Resource Include="Images\Rule.bmp" />
+    <Resource Include="Images\Search.bmp" />
+    <Resource Include="Images\Send.bmp" />
+    <Resource Include="Images\Sent.bmp" />
+    <Resource Include="Images\Shortcut.bmp" />
+    <Resource Include="Images\Shortcut24.bmp" />
+    <Resource Include="Images\SyncError.bmp" />
+    <Resource Include="Images\Task.bmp" />
+    <Resource Include="Images\TaskRequest.bmp" />
+    <Resource Include="Images\Tasks24.bmp" />
+    <Resource Include="Images\TitleBarGrip.bmp" />
+    <Resource Include="Images\Unread.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToCopy Include="..\Binaries\HtmlToXamlConverter.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\ComponentModel\ComponentModel-v40.csproj">
+      <Project>{A82CD088-1DBD-434F-BB75-E8773738D85E}</Project>
+      <Name>ComponentModel-v40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmailService\EmailService.csproj">
+      <Project>{EB960ED5-8757-4968-A005-CE5555EB5C82}</Project>
+      <Name>EmailService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

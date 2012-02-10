@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Microsoft.Samples.XFileExplorer.ContentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="White"
+    Loaded="OnLoaded" >
+    <UserControl.Resources>
+    </UserControl.Resources>
+
+    <Grid>        
+        <ListView Margin="0,1,0,0" Name="ContentGrid" Padding="0"
+                  ItemsSource="{Binding}"
+                  SelectionChanged="ContentGrid_SelectionChanged"
+                  MouseDoubleClick="ContentGrid_MouseDoubleClick"
+                  KeyDown="ContentGrid_KeyDown">
+            <ListView.Resources>
+                <DataTemplate x:Key="IconTmpt">
+                    <Image  Source="{Binding Path=Icon}" Width="16" Height="16" Stretch="Fill" Name="ItemIcon" />
+                </DataTemplate>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView AllowsColumnReorder="True">
+                    <GridViewColumn CellTemplate="{StaticResource IconTmpt}" Width="30" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="150" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date Modified" Width="150" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Type}" Header="Type" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Size}" Header="Size" Width="80"   />
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu x:Name="contextMenu">
+                    <MenuItem Command="ApplicationCommands.Copy"/>
+                    <MenuItem Command="ApplicationCommands.Cut"/>
+                    <MenuItem Command="ApplicationCommands.Paste"/>
+                    <Separator/>
+                    <MenuItem Command="ApplicationCommands.Delete"/>
+                    <Separator/>
+                    <MenuItem x:Name="customMenuItem" Header="Custom"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.CommandBindings>
+                <CommandBinding Command="ApplicationCommands.Copy" Executed="CommandCopyCut_Executed" CanExecute="CommandCopyCut_CanExecute" />
+                <CommandBinding Command="ApplicationCommands.Cut" Executed="CommandCopyCut_Executed" CanExecute="CommandCopyCut_CanExecute" />
+                <CommandBinding Command="ApplicationCommands.Paste" Executed="CommandPaste_Executed" CanExecute="CommandPaste_CanExecute" />
+                <CommandBinding Command="ApplicationCommands.Delete" Executed="CommandDelete_Executed" CanExecute="CommandCopyCut_CanExecute" />
+            </ListView.CommandBindings>
+        </ListView>
+    </Grid>
+</UserControl>

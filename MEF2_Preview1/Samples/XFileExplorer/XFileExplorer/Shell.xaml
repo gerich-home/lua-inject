@@ -1,0 +1,45 @@
+﻿<Window x:Class="Microsoft.Samples.XFileExplorer.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Extensible File Explorer" Height="600" Width="950" WindowState="Normal" Background="WhiteSmoke">
+    
+    <DockPanel Name="MainPanel" Width="Auto" Height="Auto" LastChildFill="True">
+        <Menu Name="MainMenu" DockPanel.Dock="Top">
+            <MenuItem Header="_File" />
+            <MenuItem Header="_Edit">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="_View" Name="ViewMenu"/>
+            <MenuItem Header="_Help" Click="HelpMenu_Click" />
+        </Menu>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Name="TopPanel" LastChildFill="True" />
+            <Border Grid.Row="2" BorderThickness="1" BorderBrush="Gray">
+                <Border BorderThickness="1" Margin="2" BorderBrush="Gainsboro">
+                    <StackPanel  Name="BottomPanel"  Orientation="Vertical"/>
+                </Border>
+            </Border>      
+            <DockPanel Grid.Row="1" Name="MiddlePanel" LastChildFill="True">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <DockPanel Grid.Column="0" Name="LeftPanel" Margin="0,0,2,0" LastChildFill="True" />
+                    <DockPanel Grid.Column="1" Name="RightPanel" LastChildFill="True">
+                        <TabControl Name="RightPanelTabs" />
+                    </DockPanel>
+                    <GridSplitter Width="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="LightGray" />
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>

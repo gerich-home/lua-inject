@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="MeflookSample.LeftSpine"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MeflookSample"
+    Loaded="OnLoaded">
+    <DockPanel Name="dockPanel">
+    <DockPanel.Resources>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="DockPanel.Dock" Value="Bottom"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      </Style>
+      <Style TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Horizontal"/>
+      </Style>
+      <Style TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0,1,0,0"/>
+      </Style>
+    </DockPanel.Resources>
+      <TextBlock Text="Mail" DockPanel.Dock="Top" FontFamily="Arial" FontSize="16" Padding="4,2,0,4" Foreground="White">
+        <TextBlock.Background>
+          <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="White" Offset="0.0" />
+            <GradientStop Color="Gray" Offset="1.0" />
+          </LinearGradientBrush>
+        </TextBlock.Background>
+      </TextBlock>
+    <Button>
+      <StackPanel>
+        <Image Source="Images/Notes32.bmp" HorizontalAlignment="Left"/>
+        <Label>Notes</Label>
+      </StackPanel>
+    </Button>
+    <Button>
+      <StackPanel>
+        <Image Source="Images/Contacts24.bmp" HorizontalAlignment="Left"/>
+        <Label>Contacts</Label>
+      </StackPanel>
+    </Button>
+    <Button>
+      <StackPanel>
+        <Image Source="Images/Tasks24.bmp" HorizontalAlignment="Left"/>
+        <Label>Tasks</Label>
+      </StackPanel>
+    </Button>
+    <Button>
+      <StackPanel>
+        <Image Source="Images/Calendar24.bmp" HorizontalAlignment="Left"/>
+        <Label>Calendar</Label>
+      </StackPanel>
+    </Button>
+    <Button>
+      <StackPanel>
+        <Image Source="Images/Mail24.bmp" HorizontalAlignment="Left"/>
+        <Label>Mail</Label>
+      </StackPanel>
+    </Button>
+    <!--<local:FolderView />-->
+  </DockPanel>
+</UserControl>

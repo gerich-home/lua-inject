@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3951FF95-830B-4846-8FD2-F164FA33693D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shell</RootNamespace>
+    <AssemblyName>Shell</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <OutputPath>..\..\..\bin\MEFStudio</OutputPath>
+    <CopyComponentModelComposition>true</CopyComponentModelComposition>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="..\Binaries\CodeEditor.dll" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
+      <Project>{51DD97E4-90F9-4A9F-8DB8-C8074CDCBBFF}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\src\ComponentModel\ComponentModel-v40.csproj">
+      <Project>{A82CD088-1DBD-434F-BB75-E8773738D85E}</Project>
+      <Name>ComponentModel-v40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CodeEditorControl.Designer.cs">
+      <DependentUpon>CodeEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileNewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileNewDialog.Designer.cs">
+      <DependentUpon>FileNewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HostControl.Designer.cs">
+      <DependentUpon>HostControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainShell.Designer.cs">
+      <DependentUpon>MainShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="CodeEditorControl.resx">
+      <DependentUpon>CodeEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileNewDialog.resx">
+      <DependentUpon>FileNewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainShell.resx">
+      <DependentUpon>MainShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToCopy Include="..\Binaries\Loader.dll" />
+    <FilesToCopy Include="..\Binaries\CodeEditor.dll" />
+    <FilesToCopy Include="..\Binaries\GraphLibrary.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+</Project>

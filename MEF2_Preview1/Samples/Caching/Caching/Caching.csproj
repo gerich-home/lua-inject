@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D75F8CFC-3036-4F59-AD2C-6310D32C8B07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Caching</RootNamespace>
+    <AssemblyName>Caching</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\CachingSample\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PUBLIC_CACHING_API</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\Internal\Assumes.cs" />
+    <Compile Include="Microsoft\Internal\Assumes.InternalErrorException.cs" />
+    <Compile Include="Microsoft\Internal\LazyServices.cs" />
+    <Compile Include="Microsoft\Internal\Requires.cs" />
+    <Compile Include="Strings.Designer.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AssemblyCacheGenerator.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AttributedModel\AttributedCacheServices.CacheKeys.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AttributedModel\AttributedCacheServices.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AttributedModel\AttributedComposablePartCatalogSite.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AttributedModel\CompositionCacheServices.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AttributedModel\ReflectionCacheServices.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\AttributedModel\ReflectionResolver.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\CacheStructureConstants.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\CachingResult.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\CachingResultOfT.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogAssemblyCache.CatalogCache.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogAssemblyCache.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogAssemblyCacheReader.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogAssemblyCacheWriter.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogCache.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogCacheReader.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ComposablePartCatalogCacheWriter.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\EmptyCachedComposablePartCatalogSite.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\GenerationServices.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ICachedComposablePartCatalog.cs" />
+    <Compile Include="System\ComponentModel\Composition\Caching\ICachedComposablePartCatalogSite.cs" />
+    <Compile Include="System\ComponentModel\Composition\Hosting\CachedAggregateCatalog.cs" />
+    <Compile Include="System\ComponentModel\Composition\Hosting\CachedAssemblyCatalog.cs" />
+    <Compile Include="System\ComponentModel\Composition\Hosting\CachedTypeCatalog.cs" />
+    <Compile Include="System\ComponentModel\Composition\Hosting\ComposablePartCatalogCachingServices.cs" />
+    <Compile Include="System\ComponentModel\Composition\MetadataServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\ComponentModel\ComponentModel-v40.csproj">
+      <Project>{A82CD088-1DBD-434F-BB75-E8773738D85E}</Project>
+      <Name>ComponentModel-v40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MEF-v35">
+</Property><Property Name="Solution File" Value="D:\Users\sgerasim\Desktop\lua-inject\MEF2_Preview1\MEF-v35.sln">
+</Property><Property Name="Date" Value="10 февраля 2012 г.">
+</Property><Property Name="Time" Value="11:36">
+</Property></Properties><Event ErrorLevel="0" Project="ComponentModel-v35" Source="src\ComponentModel\ComponentModel-v35.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ComponentModel-v35" Source="src\ComponentModel\ComponentModel-v35.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="UnitTestFramework-v35" Source="Tests\UnitTestFramework\UnitTestFramework-v35.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="UnitTestFramework-v35" Source="Tests\UnitTestFramework\UnitTestFramework-v35.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ComponentModelUnitTest-v35" Source="Tests\ComponentModelUnitTest\ComponentModelUnitTest-v35.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ComponentModelUnitTest-v35" Source="Tests\ComponentModelUnitTest\ComponentModelUnitTest-v35.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ComponentModelTransparentAssembly-v35" Source="Tests\ComponentModelTransparentAssembly\ComponentModelTransparentAssembly-v35.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ComponentModelTransparentAssembly-v35" Source="Tests\ComponentModelTransparentAssembly\ComponentModelTransparentAssembly-v35.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MEF-v35.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MEF-v35.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="UnitTestFramework-v35" Source="Tests\UnitTestFramework\UnitTestFramework-v35.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ComponentModelUnitTest-v35" Source="Tests\ComponentModelUnitTest\ComponentModelUnitTest-v35.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ComponentModelTransparentAssembly-v35" Source="Tests\ComponentModelTransparentAssembly\ComponentModelTransparentAssembly-v35.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="ComponentModel-v35" Source="src\ComponentModel\ComponentModel-v35.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

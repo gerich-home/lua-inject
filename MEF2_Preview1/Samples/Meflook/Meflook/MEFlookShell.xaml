@@ -1,0 +1,43 @@
+﻿<Window x:Class="MeflookSample.MeflookShell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sysXml="clr-namespace:System.Xml;assembly=System.Xml"
+    xmlns:local="clr-namespace:MeflookSample"
+    Title="MeflookSample" WindowState="Maximized"
+    Loaded="OnLoaded"
+    >
+  <DockPanel Name="dockPanel">
+    <Menu DockPanel.Dock="Top">
+      <MenuItem Header="_File"/>      
+      <MenuItem Header="_Edit"/>      
+      <MenuItem Header="_View"/>      
+      <MenuItem Header="_Go"/>      
+      <MenuItem Header="_Tools"/>      
+      <MenuItem Header="_Options"/>      
+      <MenuItem Header="_Help"/>      
+    </Menu>
+    <ToolBarTray DockPanel.Dock="Top">
+      <ToolBar Band="1" BandIndex="1">
+          <Button><Image Source="Images/new.bmp" /></Button>
+          <Separator/>
+          <Button><Image Source="Images/Reply.bmp" /></Button>
+          <Button><Image Source="Images/ReplyAll.bmp" /></Button>
+          <Button><Image Source="Images/Forward.bmp" /></Button>
+          <Separator/>
+          <Button><Image Source="Images/cut.bmp" /></Button>
+          <Button><Image Source="Images/copy.bmp" /></Button>
+          <Button><Image Source="Images/paste.bmp" /></Button>
+          <Separator/>
+          <Button><Image Source="Images/print.bmp" /></Button>
+          <Button><Image Source="Images/preview.bmp" /></Button>
+          <Button><Image Source="Images/Delete.bmp" /></Button>
+     </ToolBar>
+    </ToolBarTray>
+
+
+    <!--<local:LeftSpine DockPanel.Dock="Left"/>
+    <GridSplitter DockPanel.Dock="Left"/>
+    <local:MessageList DockPanel.Dock="Left"/>
+    <local:MessagePane/>-->
+  </DockPanel>
+</Window>

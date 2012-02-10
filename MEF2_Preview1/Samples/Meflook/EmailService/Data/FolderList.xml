@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Books.xml-->
+<FolderList>
+	<Folders>
+		<Folder>
+			<Name>Danny C</Name>
+			<UnreadMailCount>24</UnreadMailCount>
+			<Folders>
+		<Folder>
+			<Name>Deleted Mails</Name>
+			<UnreadMailCount>7</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Drafts</Name>
+			<UnreadMailCount>4</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Inbox</Name>
+			<UnreadMailCount>18</UnreadMailCount>
+			<Folders>
+        <Folder>
+          <Name>MEF</Name>
+          <UnreadMailCount>4</UnreadMailCount>
+        </Folder>
+        <Folder>
+					<Name>Acropolis</Name>
+					<UnreadMailCount>2</UnreadMailCount>
+				</Folder>
+				<Folder>
+					<Name>WPF</Name>
+					<UnreadMailCount>0</UnreadMailCount>
+				</Folder>
+				<Folder>
+					<Name>Expression</Name>
+					<UnreadMailCount>6</UnreadMailCount>
+				</Folder>
+				<Folder>
+					<Name>Cider</Name>
+					<UnreadMailCount>3</UnreadMailCount>
+				</Folder>
+			</Folders>
+		</Folder>
+		<Folder>
+			<Name>Junk Email</Name>
+			<UnreadMailCount>2</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Outbox</Name>
+			<UnreadMailCount>2</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Sent Items</Name>
+			<UnreadMailCount>1</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Sync Issues</Name>
+			<UnreadMailCount>3</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Synchronization Failures</Name>
+			<UnreadMailCount>1</UnreadMailCount>
+		</Folder>
+		<Folder>
+			<Name>Search Folders</Name>
+			<UnreadMailCount>2</UnreadMailCount>
+			<Folders>
+				<Folder>
+					<Name>Puzzles</Name>
+					<UnreadMailCount>2</UnreadMailCount>
+				</Folder>
+			</Folders>
+		</Folder>
+		</Folders>
+	</Folder>
+		<Folder>
+			<Name>Archives</Name>
+			<UnreadMailCount>6</UnreadMailCount>
+			<Folders>
+				<Folder>
+					<Name>Archive1</Name>
+					<UnreadMailCount>2</UnreadMailCount>
+				</Folder>
+			</Folders>
+		</Folder>
+	</Folders>
+</FolderList>

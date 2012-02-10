@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="MeflookSample.MessagePane"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="OnLoaded">
+  <Border BorderThickness="9" BorderBrush="Gray">
+    <DockPanel x:Name="dockPanel">
+      <TextBlock Text="{Binding Subject}" FontFamily="Arial" FontWeight="Bold" FontSize="16" DockPanel.Dock="Top" Margin="16,12,1,6"/>
+      <TextBlock Text="{Binding From}" FontFamily="Arial" FontSize="12" DockPanel.Dock="Top" Margin="16,6,1,10"/>
+      <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+        <TextBlock Text="To:" FontFamily="Arial" FontSize="11" FontWeight="Bold" Foreground="Gray" Margin="16,2,1,2"/>
+        <TextBlock Text="{Binding To}" FontFamily="Arial" FontSize="11" Margin="8,2,1,2"/>
+      </StackPanel>
+      <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+        <TextBlock Text="Cc:" FontFamily="Arial" FontSize="11" FontWeight="Bold" Foreground="Gray" Margin="16,2,1,8"/>
+        <TextBlock Text="{Binding CC}" FontFamily="Arial" FontSize="11" Margin="8,2,1,8"/>
+      </StackPanel>
+      <Line Stroke="Gray" StrokeThickness="1" X1="12" X2="1000"  DockPanel.Dock="Top"/>
+      <FlowDocumentReader x:Name="messageContent"/>
+    </DockPanel>
+  </Border>
+</UserControl>

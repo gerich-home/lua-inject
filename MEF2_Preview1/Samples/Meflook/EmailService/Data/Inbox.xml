@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<Inbox>
+  <xs:schema id="Inbox" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="Inbox" msdata:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Message">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="From" type="xs:string" minOccurs="0" />
+                <xs:element name="To" type="xs:string" minOccurs="0" />
+                <xs:element name="SentDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Read" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Subject" type="xs:string" minOccurs="0" />
+                <xs:element name="Path" type="xs:string" minOccurs="0" />
+                <xs:element name="CC" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Message>
+    <From>Kathy K</From>
+    <To>Dinesh C</To>
+    <SentDate>2007-03-15T00:30:00.0000000-16:45</SentDate>
+    <Read>false</Read>
+    <Subject>Butter for your CTP1 talk</Subject>
+    <Path>Harsh.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>David H</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-17T00:30:00.0000000-12:10</SentDate>
+    <Read>false</Read>
+    <Subject>Some _more_ information on your CTP1 talk...</Subject>
+    <Path>Mark.htm</Path>
+    <CC>Chuck L; Jamie C</CC>
+  </Message>
+  <Message>
+    <From>Nathan E</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-16T00:30:00.0000000-07:55</SentDate>
+    <Read>false</Read>
+    <Subject>Perf numbers looking great</Subject>
+    <Path>Hender.htm</Path>
+    <CC>Brad A</CC>
+  </Message>
+  <Message>
+    <From>External Caller (RED-UMS-05)</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-15T00:30:00.0000000-09:41</SentDate>
+    <Read>true</Read>
+    <Subject>Voice Mail Message (2065551212) (2 minutes 11 seconds)</Subject>
+    <Path>VoiceMail.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Dennis D</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-22:13</SentDate>
+    <Read>false</Read>
+    <Subject>CTP Demonstration</Subject>
+    <Path>Harsh.htm</Path>
+    <CC>Fred B</CC>
+  </Message>
+  <Message>
+    <From>Lista T</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:22</SentDate>
+    <Read>true</Read>
+    <Subject>RE: CTP Preview</Subject>
+    <Path>Rideout.htm</Path>
+    <CC>Kathy K; Jamie C; Chuck L</CC>
+  </Message>
+  <Message>
+    <From>David H</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:10</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Data Talk</Subject>
+    <Path>Rideout.htm</Path>
+    <CC>Kathy K; Ben W; Scott B</CC>
+  </Message>
+  <Message>
+    <From>Kathy K</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:08</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Data Talk</Subject>
+    <Path>Mark.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Ben W</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:01</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Data Talk</Subject>
+    <Path>Iain.htm</Path>
+    <CC>David H; Kathy K; Scott B</CC>
+  </Message>
+  <Message>
+    <From>Regis B</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-20:31</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Sync out CTP Talks</Subject>
+    <Path>Steve.htm</Path>
+    <CC>Paul Y</CC>
+  </Message>
+  <Message>
+    <From>Brad A</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-20:14</SentDate>
+    <Read>true</Read>
+    <Subject>Are you leaving Sunday?</Subject>
+    <Path>Simon.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Ian S</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-19:16</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Office Look and Feel in ToolStrip</Subject>
+    <Path>Erick.htm</Path>
+    <CC>Jessica F</CC>
+  </Message>
+  <Message>
+    <From>Alex B</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-14:58</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Component Model Changes</Subject>
+    <Path>Brian.htm</Path>
+    <CC>Chuck L</CC>
+  </Message>
+  <Message>
+    <From>Chuck L</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-14:58</SentDate>
+    <Read>true</Read>
+    <Subject>Latest bits for my talk?</Subject>
+    <Path>Shawn.htm</Path>
+    <CC>Kathy K; Jamie C; Brad A</CC>
+  </Message>
+  <Message>
+    <From>Martin T</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-13:54</SentDate>
+    <Read>true</Read>
+    <Subject>Your package arrived</Subject>
+    <Path>Laurie.htm</Path>
+    <CC>Holden S; Noah S; Ellie S</CC>
+  </Message>
+  <Message>
+    <From>Paul C</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-13:51</SentDate>
+    <Read>true</Read>
+    <Subject>Won't be in tomorrow</Subject>
+    <Path>Chris.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Kathy K</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-08:51</SentDate>
+    <Read>true</Read>
+    <Subject>RE: DataBinding changes</Subject>
+    <Path>Mark.htm</Path>
+    <CC>Ben W</CC>
+  </Message>
+  <Message>
+    <From>Jamie C</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-08:49</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Cool ClickOnce Demonstration</Subject>
+    <Path>Jamie.htm</Path>
+    <CC>Kathy K; Chuck L</CC>
+  </Message>
+  <Message>
+    <From>Jeff C</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:41</SentDate>
+    <Read>true</Read>
+    <Subject>Pictures of my incredible trip down to MOAB...</Subject>
+    <Path>Jeff.htm</Path>
+    <CC>Dinesh C; Ian S</CC>
+  </Message>
+  <Message>
+    <From>Noah S</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:33</SentDate>
+    <Read>true</Read>
+    <Subject>Baseball tourney this weekend</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>James B</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:08</SentDate>
+    <Read>true</Read>
+    <Subject>New music for you...</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Brett S</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:02</SentDate>
+    <Read>true</Read>
+    <Subject>Up early this morning</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Ricky T</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-06:55</SentDate>
+    <Read>true</Read>
+    <Subject>Reminder - swimming this afternoon</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Kathy K</From>
+    <To>Dinesh C</To>
+    <SentDate>2007-03-15T00:30:00.0000000-16:45</SentDate>
+    <Read>false</Read>
+    <Subject>Butter for your CTP1 talk</Subject>
+    <Path>Harsh.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>David H</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-17T00:30:00.0000000-12:10</SentDate>
+    <Read>false</Read>
+    <Subject>Some _more_ information on your CTP1 talk...</Subject>
+    <Path>Mark.htm</Path>
+    <CC>Chuck L; Jamie C</CC>
+  </Message>
+  <Message>
+    <From>Nathan E</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-16T00:30:00.0000000-07:55</SentDate>
+    <Read>false</Read>
+    <Subject>Perf numbers looking great</Subject>
+    <Path>Hender.htm</Path>
+    <CC>Brad A</CC>
+  </Message>
+  <Message>
+    <From>External Caller (RED-UMS-05)</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-15T00:30:00.0000000-09:41</SentDate>
+    <Read>true</Read>
+    <Subject>Voice Mail Message (2065551212) (2 minutes 11 seconds)</Subject>
+    <Path>VoiceMail.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Dennis D</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-22:13</SentDate>
+    <Read>false</Read>
+    <Subject>CTP Demonstration</Subject>
+    <Path>Harsh.htm</Path>
+    <CC>Fred B</CC>
+  </Message>
+  <Message>
+    <From>Lista T</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:22</SentDate>
+    <Read>true</Read>
+    <Subject>RE: CTP Preview</Subject>
+    <Path>Rideout.htm</Path>
+    <CC>Kathy K; Jamie C; Chuck L</CC>
+  </Message>
+  <Message>
+    <From>David H</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:10</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Data Talk</Subject>
+    <Path>Rideout.htm</Path>
+    <CC>Kathy K; Ben W; Scott B</CC>
+  </Message>
+  <Message>
+    <From>Kathy K</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:08</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Data Talk</Subject>
+    <Path>Mark.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Ben W</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-21:01</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Data Talk</Subject>
+    <Path>Iain.htm</Path>
+    <CC>David H; Kathy K; Scott B</CC>
+  </Message>
+  <Message>
+    <From>Regis Brid</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-20:31</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Sync out CTP Talks</Subject>
+    <Path>Steve.htm</Path>
+    <CC>Paul Y</CC>
+  </Message>
+  <Message>
+    <From>Brad A</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-20:14</SentDate>
+    <Read>true</Read>
+    <Subject>Are you leaving Sunday?</Subject>
+    <Path>Simon.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Ian S</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-19:16</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Office Look and Feel in ToolStrip</Subject>
+    <Path>Erick.htm</Path>
+    <CC>Jessica F</CC>
+  </Message>
+  <Message>
+    <From>Alex B</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-14:58</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Component Model Changes</Subject>
+    <Path>Brian.htm</Path>
+    <CC>Chuck L</CC>
+  </Message>
+  <Message>
+    <From>Chuck L</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-14:58</SentDate>
+    <Read>true</Read>
+    <Subject>Latest bits for my talk?</Subject>
+    <Path>Shawn.htm</Path>
+    <CC>Kathy K; Jamie C; Brad A</CC>
+  </Message>
+  <Message>
+    <From>Martin T</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-13:54</SentDate>
+    <Read>true</Read>
+    <Subject>Your package arrived</Subject>
+    <Path>Laurie.htm</Path>
+    <CC>Holden S; Noah S; Ellie S</CC>
+  </Message>
+  <Message>
+    <From>Paul C</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-13:51</SentDate>
+    <Read>true</Read>
+    <Subject>Won't be in tomorrow</Subject>
+    <Path>Chris.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Kathy K</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-08:51</SentDate>
+    <Read>true</Read>
+    <Subject>RE: DataBinding changes</Subject>
+    <Path>Mark.htm</Path>
+    <CC>Ben W</CC>
+  </Message>
+  <Message>
+    <From>Jamie C</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-08:49</SentDate>
+    <Read>true</Read>
+    <Subject>RE: Cool ClickOnce Demonstration</Subject>
+    <Path>Jamie.htm</Path>
+    <CC>Kathy K; Chuck L</CC>
+  </Message>
+  <Message>
+    <From>Jeff C</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:41</SentDate>
+    <Read>true</Read>
+    <Subject>Pictures of my incredible trip down to MOAB...</Subject>
+    <Path>Jeff.htm</Path>
+    <CC>Dinesh C; Ian S</CC>
+  </Message>
+  <Message>
+    <From>Noah S</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:33</SentDate>
+    <Read>true</Read>
+    <Subject>Baseball tourney this weekend</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>James B</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:08</SentDate>
+    <Read>true</Read>
+    <Subject>New music for you...</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Brett S</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-07:02</SentDate>
+    <Read>true</Read>
+    <Subject>Up early this morning</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+  <Message>
+    <From>Ricky T</From>
+    <To>Dinesh C</To>
+    <SentDate>2006-10-14T00:30:00.0000000-06:55</SentDate>
+    <Read>true</Read>
+    <Subject>Reminder - swimming this afternoon</Subject>
+    <Path>Other.htm</Path>
+    <CC></CC>
+  </Message>
+</Inbox>
