@@ -17,7 +17,7 @@ namespace LuaInjectGUI
         {
             var a = new Sheduler();
 
-            a.Start("LuaInjectGUI.exe", target.Text, module.Text);
+            a.Start(target.Text, module.Text);
         }
     }
 }

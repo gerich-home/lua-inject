@@ -47,15 +47,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -105,10 +98,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LuaInjectAgent\LuaInjectAgent.csproj">
-      <Project>{9EA747C8-B005-46CF-BF53-A555A7700C5F}</Project>
-      <Name>LuaInjectAgent</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LuaInject\LuaInject.csproj">
       <Project>{4ABF72F1-28B8-48C7-9F80-AF2A1BED4CA6}</Project>
       <Name>LuaInject</Name>

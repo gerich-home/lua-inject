@@ -1,5 +1,4 @@
 ﻿using System;
-using LuaInjectAgent;
 using System.Windows.Forms;
 
 namespace LuaInject
@@ -23,7 +22,5 @@ namespace LuaInject
         public override void IsInstalled(int clientPID)
         {
         }
-
-        public override Lua Lua { get; set; }
     }
 }

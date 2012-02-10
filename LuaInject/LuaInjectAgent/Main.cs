@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 using System.Threading;
 using EasyHook;
 
@@ -10,21 +12,28 @@ namespace LuaInjectAgent
         //Stack<string> _queue = new Stack<string>();
         public Client Interface { get; private set; }
 
-        public Main(RemoteHooking.IContext context, string channelName, string hookedModule)
+        public Main(RemoteHooking.IContext context, string channelName, string pluginsPath, string hookedModule)
         {
             // connect to host...
             Interface = RemoteHooking.IpcConnectClient<Client>(channelName);
             Interface.Ping();
         }
 
-        public void Run(RemoteHooking.IContext context, string channelName, string hookedModule)
-        {
-            // install hook...
-            Lua lua;
+        [ImportMany(AllowRecomposition = true)]
+        public IEnumerable<IHooker> HookPlugins { get; set; }
 
+        public void Run(RemoteHooking.IContext context, string channelName, string pluginsPath, string hookedModule)
+        {
             try
             {
-                lua = new Lua(hookedModule, Interface);
+                var catalog = new DirectoryCatalog(pluginsPath);
+                var container = new CompositionContainer(catalog);
+                container.ComposeParts(this);
+
+                foreach (var plugin in HookPlugins)
+                {
+                    plugin.Hook(Interface);
+                }
             }
             catch (Exception e)
             {
@@ -33,8 +42,6 @@ namespace LuaInjectAgent
             }
 
             Interface.IsInstalled(RemoteHooking.GetCurrentProcessId());
-
-            //Interface.Lua = lua;
 
             RemoteHooking.WakeUpProcess();
 

@@ -11,7 +11,5 @@ namespace LuaInjectAgent
         public abstract void ReportException(Exception e);
         public abstract void IsInstalled(int clientPID);
         public abstract void Echo(String text);
-
-        public abstract Lua Lua { get; set; }
     }
 }
