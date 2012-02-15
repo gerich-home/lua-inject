@@ -2,6 +2,6 @@
 {
     public interface IHooker
     {
-        void Hook(Client Interface);
+        void Hook(string targetExecutable, string configPath, string pluginsPath, Client Interface);
     }
 }

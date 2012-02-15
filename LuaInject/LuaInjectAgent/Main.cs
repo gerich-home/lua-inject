@@ -12,7 +12,7 @@ namespace LuaInjectAgent
         //Stack<string> _queue = new Stack<string>();
         public Client Interface { get; private set; }
 
-        public Main(RemoteHooking.IContext context, string channelName, string pluginsPath, string hookedModule)
+        public Main(RemoteHooking.IContext context, string channelName, string pluginsPath, string configPath, string targetExecutable)
         {
             // connect to host...
             Interface = RemoteHooking.IpcConnectClient<Client>(channelName);
@@ -22,7 +22,7 @@ namespace LuaInjectAgent
         [ImportMany(AllowRecomposition = true)]
         public IEnumerable<IHooker> HookPlugins { get; set; }
 
-        public void Run(RemoteHooking.IContext context, string channelName, string pluginsPath, string hookedModule)
+        public void Run(RemoteHooking.IContext context, string channelName, string pluginsPath, string configPath, string targetExecutable)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace LuaInjectAgent
 
                 foreach (var plugin in HookPlugins)
                 {
-                    plugin.Hook(Interface);
+                    plugin.Hook(targetExecutable, configPath, pluginsPath, Interface);
                 }
             }
             catch (Exception e)

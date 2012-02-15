@@ -8,14 +8,13 @@ namespace LuaInject
 {
     public class Sheduler
     {
-        public void Start(string targetExecutable, string hookedModule = null, string commandLine = "")
+        public void Start(string targetExecutable, string commandLine = "")
         {
-            hookedModule = hookedModule ?? targetExecutable;
-
             try
             {
                 // All loaded modules should use .Net Framework <= 3.5
-                Config.Register("Lua injection",
+                Config.Register(
+                    "Lua injection",
                     
                     "LuaInjectAgent.dll",
                     "System.ComponentModel.Composition.dll"
@@ -30,10 +29,11 @@ namespace LuaInject
                     "LuaInjectAgent.dll",
                     "LuaInjectAgent.dll",
                     out targetPid,
-                    
-                    channelName,
-                    Path.Combine(Directory.GetCurrentDirectory(), "HookPlugins"),
-                    hookedModule
+
+                    channelName,                                                    //channel
+                    Path.Combine(Directory.GetCurrentDirectory(), "HookPlugins"),   //plugins directory
+                    Path.Combine(Directory.GetCurrentDirectory(), "Config"),        //config directory
+                    targetExecutable                                                //target executable
                     );
             }
             catch (Exception e)

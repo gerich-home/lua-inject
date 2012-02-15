@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{60251F11-AD7F-4097-9A3C-4953A9D36B82}</ProjectGuid>
+    <ProjectGuid>{F6BF20B4-2313-49DB-89C4-52DD06F70822}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LuaHooker</RootNamespace>
-    <AssemblyName>LuaHooker</AssemblyName>
+    <RootNamespace>TestHooker</RootNamespace>
+    <AssemblyName>TestHooker</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\LuaInjectGUI\bin\Debug\HookPlugins\</OutputPath>
+    <OutputPath>..\LuaInjectGUI\bin\Debug\HookPlugins\LuaHookerPlugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,35 +26,36 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\LuaInjectGUI\bin\Release\HookPlugins\</OutputPath>
+    <OutputPath>..\LuaInjectGUI\bin\Release\HookPlugins\LuaHookerPlugins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EasyHook">
-      <HintPath>..\EasyHook\Debug\x64\EasyHook.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition">
       <HintPath>..\..\MEF2_Preview1\bin\net35\System.ComponentModel.Composition.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HookDelegates.cs" />
-    <Compile Include="LuaHooker.cs" />
+    <Compile Include="Hooker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LuaHooker\LuaHooker.csproj">
+      <Project>{60251F11-AD7F-4097-9A3C-4953A9D36B82}</Project>
+      <Name>LuaHooker</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\LuaInjectAgent\LuaInjectAgent.csproj">
       <Project>{9EA747C8-B005-46CF-BF53-A555A7700C5F}</Project>
       <Name>LuaInjectAgent</Name>
-      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

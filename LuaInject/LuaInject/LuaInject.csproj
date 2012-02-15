@@ -73,6 +73,7 @@
     <Reference Include="EasyHook">
       <HintPath>..\EasyHook\Debug\x64\EasyHook.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\MEF2_Preview1\bin\net35\System.ComponentModel.Composition.dll</HintPath>
     </Reference>
