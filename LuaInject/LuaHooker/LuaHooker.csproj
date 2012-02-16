@@ -46,7 +46,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HookDelegates.cs" />
+    <Compile Include="ILuaHooker.cs" />
     <Compile Include="LuaHooker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

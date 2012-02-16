@@ -16,7 +16,8 @@ namespace LuaInject
 
         public override void ReportException(Exception e)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(e.Message, "Exception thrown");
+            MessageBox.Show(e.StackTrace, "Stack trace");
         }
 
         public override void IsInstalled(int clientPID)

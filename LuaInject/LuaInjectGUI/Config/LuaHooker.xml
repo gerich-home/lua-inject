@@ -1,31 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<LuaHookerConfig>
+<LuaHookerConfig luamodule="lua5.1.dll">
   <Hookers>
     <!--
     Place your hookers here
     
     You can define hookers in such way:
-    <Hooker name="TestHooker">TestHooker.dll</Hooker>
-    <Hooker name="OtherHooker">OtherHooker.dll</Hooker>
+    <Hooker>TestHooker</Hooker>
+    <Hooker>OtherHooker</Hooker>
     
     -->
-    <Hooker name="TestHooker">TestHooker.dll</Hooker>
+    <Hooker>TestHooker</Hooker>
   </Hookers>
-  <Hooks>
-    <!--
-    Place your hooks here
-    
-    You can use any of these hooks:
-    <Hook name="luaopen_base">TestHooker</Hook>
-    <Hook name="luaopen_table">OtherHooker</Hook>
-    <Hook name="luaopen_io">TestHooker</Hook>
-    <Hook name="luaopen_string">TestHooker</Hook>
-    <Hook name="luaopen_math">TestHooker</Hook>
-    <Hook name="luaopen_debug">OtherHooker</Hook>
-    <Hook name="luaL_openlib">TestHooker</Hook>
-    
-    -->
-
-    <Hook name="luaL_openlib">TestHooker</Hook>
-  </Hooks>
 </LuaHookerConfig>

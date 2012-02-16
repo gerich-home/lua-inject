@@ -22,3 +22,11 @@
 /EasyHook/Test/ManagedTest/obj
 /EasyHook/EasyHookSvc/obj
 /EasyHook/_ReSharper.EasyHook
+/LuaInject/LuaHooker/bin
+/LuaInject/LuaHooker/obj
+/LuaInject/LuaInjectGUI/obj
+/LuaInject/LuaInjectAgent/obj
+/LuaInject/LuaInjectAgent/bin
+/LuaInject/LuaInjectGUI/bin
+/LuaInject/TestHooker/bin
+/LuaInject/TestHooker/obj

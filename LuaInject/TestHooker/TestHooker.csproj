@@ -35,6 +35,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition">
       <HintPath>..\..\MEF2_Preview1\bin\net35\System.ComponentModel.Composition.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -56,6 +57,7 @@
     <ProjectReference Include="..\LuaInjectAgent\LuaInjectAgent.csproj">
       <Project>{9EA747C8-B005-46CF-BF53-A555A7700C5F}</Project>
       <Name>LuaInjectAgent</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
