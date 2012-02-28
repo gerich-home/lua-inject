@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILuaHooker.cs" />
+    <Compile Include="Lua50.cs" />
     <Compile Include="LuaHooker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

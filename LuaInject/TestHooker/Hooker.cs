@@ -10,47 +10,77 @@ namespace TestHooker
     [Export(typeof(ILuaHooker))]
     public class Hooker : ILuaHooker
     {
-        //int luaL_newmetatable (lua_State *L, const char *tname);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaL_newmetatable(IntPtr L, String tname);
-
-        //int luaopen_base (lua_State *L);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaopen_base(IntPtr L);
-
-        //int luaopen_table (lua_State *L);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaopen_table(IntPtr L);
-
-        //int luaopen_io (lua_State *L);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaopen_io(IntPtr L);
-
-        //int luaopen_string (lua_State *L);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaopen_string(IntPtr L);
-
-        //int luaopen_math (lua_State *L);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaopen_math(IntPtr L);
-
-        //int luaopen_debug (lua_State *L);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate int luaopen_debug(IntPtr L);
-
-        //void luaL_openlib (lua_State *L, const char *libname, const luaL_reg *l, int nup);
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private delegate void luaL_openlib(IntPtr L, String s, IntPtr l, int nup);
-
-
-        private static luaL_openlib luaL_openlib_hook(luaL_openlib original)
+        static int test(IntPtr L)
         {
-            return (L, s, l, nup) =>
+            MessageBox.Show("Hacked");
+
+            return 0;
+        }
+
+        private const int LUA_GLOBALSINDEX = -10001;
+
+        private void lua_getglobal(IntPtr L, string s)
+        {
+            MessageBox.Show("lua_getglobal 1");
+            Lua.lua_pushstring(L, s);
+            MessageBox.Show("lua_getglobal 2");
+            Lua.lua_gettable(L, LUA_GLOBALSINDEX);
+            MessageBox.Show("lua_getglobal 3");
+        }
+
+        private void lua_pushcfunction(IntPtr L, Lua50.Types.lua_CFunction f)
+        {
+            MessageBox.Show("lua_pushcfunction 1");
+            Lua.lua_pushcclosure(L, f, 0);
+            MessageBox.Show("lua_pushcfunction 2");
+        }
+
+        private void lua_setglobal(IntPtr L, string s)
+        {
+            MessageBox.Show("lua_setglobal 1");
+            Lua.lua_pushstring(L, s);
+            MessageBox.Show("lua_setglobal 2");
+            Lua.lua_insert(L, -2);
+            MessageBox.Show("lua_setglobal 3");
+            Lua.lua_settable(L, LUA_GLOBALSINDEX);
+            MessageBox.Show("lua_setglobal 4");
+        }
+
+        private Lua50.Types.luaopen_base luaopen_base(Lua50.Types.luaopen_base original)
+        {
+            MessageBox.Show("setting up luaopen_base hook");
+            return (L) =>
                        {
-                           MessageBox.Show(string.Format("luaL_openlib is called for {0}", s));
-                           original(L, s, l, nup);
+
+                           try
+                           {
+                               MessageBox.Show("registering test");
+                               MessageBox.Show("1");
+
+                               lua_pushcfunction(L, test);
+                               MessageBox.Show("2");
+                               lua_setglobal(L, "hack");
+                               MessageBox.Show("3");
+
+
+                               lua_getglobal(L, "hack");
+                               MessageBox.Show("4");
+                               Lua.lua_pcall(L, 0, 0, 0);
+                               MessageBox.Show("5");
+                           }
+                           catch (Exception e)
+                           {
+                               MessageBox.Show(e.Message);
+                               MessageBox.Show(e.StackTrace);
+                               throw;
+                           }
+
+                           return original(L);
                        };
         }
+
+
+        public Lua50 Lua { get; set; }
 
         public IEnumerable<LuaHook> Hooks
         {
@@ -58,7 +88,7 @@ namespace TestHooker
             {
                 return new[]
                              {
-                                 LuaHook.Create<luaL_openlib>("luaL_openlib", luaL_openlib_hook),
+                                 LuaHook.Create<Lua50.Types.luaopen_base>("luaopen_base", luaopen_base),
                              };
             }
         }

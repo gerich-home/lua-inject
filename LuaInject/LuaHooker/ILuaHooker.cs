@@ -22,6 +22,7 @@ namespace LuaHooker
 
     public interface ILuaHooker
     {
+        Lua50 Lua { set; }
         IEnumerable<LuaHook> Hooks { get; }
     }
 }

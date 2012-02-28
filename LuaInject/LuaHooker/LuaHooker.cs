@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -19,6 +21,17 @@ namespace LuaHooker
             // target module with lua functions
             var hookedModule = doc.Root.Attribute("luamodule").Value;
 
+            var lua = new Lua50(hookedModule);
+
+            Func<CompositionContainer, IEnumerable<LuaHook>> GetHooks = c =>
+                                                                            {
+                                                                                var luaHooker =
+                                                                                    c.GetExportedValue<ILuaHooker>();
+                                                                                luaHooker.Lua = lua;
+                                                                                return luaHooker.Hooks.ToList();
+                                                                            };
+
+
             // list of hookers (plugins) with their path, 
             var hookers = (from containerPath in
                                (from path in
@@ -34,7 +47,7 @@ namespace LuaHooker
                                       {
                                           Container = containerPath.container,
                                           Path = containerPath.path,
-                                          Hooks = containerPath.container.GetExportedValue<ILuaHooker>().Hooks.ToList()
+                                          Hooks = GetHooks(containerPath.container)
                                       }).ToList();
 
             hooks = new ArrayList();
@@ -58,6 +71,7 @@ namespace LuaHooker
 
             foreach (var hooker in hookers)
             {
+
                 foreach (var activeHooks in hooker.Hooks)
                 {
                     var hookerMethod = activeHooks.HookerFunction.Method;

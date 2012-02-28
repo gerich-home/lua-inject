@@ -13,9 +13,9 @@ namespace LuaInjectAgent
         {
             var hook = LocalHook.Create(
                 LocalHook.GetProcAddress(hookedModule, function),
-                hookProcedure(Utils.DynamicDllInvoke<T>(function, hookedModule)) as Delegate,
+                hookProcedure(LocalHook.GetProcDelegate<T>(hookedModule, function)) as Delegate,
                 callback);
-
+            
             hook.ThreadACL.SetExclusiveACL(new[] { 0 });
 
             return hook;

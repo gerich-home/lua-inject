@@ -17,6 +17,11 @@ namespace LuaInject
         public override void ReportException(Exception e)
         {
             MessageBox.Show(e.Message, "Exception thrown");
+            if (e.InnerException != null)
+            {
+                MessageBox.Show(e.InnerException.Message, "Inner exception");
+                MessageBox.Show(e.InnerException.StackTrace, "Inner exception stack trace");
+            }
             MessageBox.Show(e.StackTrace, "Stack trace");
         }
 

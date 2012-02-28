@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EasyHook">
+      <HintPath>..\EasyHook\Debug\x64\EasyHook.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition">
       <HintPath>..\..\MEF2_Preview1\bin\net35\System.ComponentModel.Composition.dll</HintPath>
