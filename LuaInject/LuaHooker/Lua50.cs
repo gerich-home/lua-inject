@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using EasyHook;
+using LuaInjectAgent;
 
 namespace LuaHooker
 {
@@ -613,7 +614,7 @@ namespace LuaHooker
                 try
                 {
                     prop.SetValue(this,
-                        typeof(LocalHook)
+                        typeof(Utils)
                         .GetMethod("GetProcDelegate")
                         .MakeGenericMethod(prop.FieldType)
                         .Invoke(null, new object[] {
